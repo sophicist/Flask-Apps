@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenyan Data Online</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Credit Scorer</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="home.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h4>Please fill in the form below to get your credit score</h4>
+        <div class="card">
+            <div class="container">
+                <form action = "http://localhost:5000/result" method = "POST">
+                    <p class="range-field">
+                        <label>Loan_amount</label>
+                        <input type="range" id="test5" min="0" max="5500" />
+                    </p>
+                </form>
+            </div>
+
+            <div class="container">
+                <form action="#">
+                    <label>Funded_amount</label>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="4950" />
+                    </p>
+                </form>
+            </div>
+
+            <div class="container">
+                <label>Term</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>36 months</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>   
+            </div>
+
+            <div class="container">
+                <form action="#">
+                    <label>Int_rate</label>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="14" />
+                    </p>
+                </form>
+            </div>
+
+            <div class="container">
+                <form action="#">
+                    <label>Installment</label>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="1050" />
+                    </p>
+                </form>
+            </div>
+
+            <div class="container">
+                <label>Emp_length</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>10+ years</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>   
+            </div>
+
+            <div class="container">
+                <label>Home_own</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>RENT</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>   
+            </div>
+
+            <div class="container">
+                <form action="#">
+                    <label>Annual_income</label>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="55000" />
+                    </p>
+                
+            </div>
+
+            <div class="container">
+                <label>Verification</label>
+                <select class="browser-default">
+                    <option value="" disabled selected>Verified</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>   
+            </div>
+            <p><input type = "submit" value = "submit" /></p>
+        </form>
+        </div>
+    </div>
+        
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

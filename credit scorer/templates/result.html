@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Credit Score</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Credit Scorer</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="home.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card"> 
+            <div class="container">  
+                <div class="card-content">
+                    <h4>Your Credit Score is: </h4> 
+                    <i class="large material-icons">stars</i>
+                    <h4>{{score}}</h4> 
+                </div>
+            </div> 
+           
+            <div class="container">
+            <table class="striped">
+                <h4>Loan Score Card</h4>
+                <thead>
+                    <tr>
+                        <th>Range</th>
+                        <th>Suggested Loan</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>8.1 - 10</td>
+                        <td>Maximum Loan</td>
+                        <td>This are the best loans that will perform wll</td>
+                    </tr>
+                    <tr>
+                        <td>6.1 - 8</td>
+                        <td>ksh 6,000 - ksh 10,000 </td>
+                        <td>Good loans that also perform well</td>
+                    </tr>
+                    <tr>
+                        <td>3.1 - 6</td>
+                        <td>ksh 3,000 - ksh 5,000 </td>
+                        <td>This are average loans that sometimes default but on average do well</td>
+                    </tr>
+                    <tr>
+                        <td>0 - 3</td>
+                        <td>No Loans </td>
+                        <td>This loans are highly likely to default</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>  
+</html>

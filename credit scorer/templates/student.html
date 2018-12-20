@@ -1,0 +1,61 @@
+<html>
+   <body>
+   
+         <!DOCTYPE html>
+         <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Kenyan Data Online</title>
+             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         </head>
+         
+         <body>
+             <nav>
+                 <div class="container">
+                     <div class="nav-wrapper">
+                         <a href="#" class="brand-logo">Credit Scorer</a>
+                         <ul id="nav-mobile" class="right hide-on-med-and-down">
+                             <li><a href="home.html">Home</a></li>
+                         </ul>
+                     </div>
+                 </div>
+             </nav>
+
+   <div class="container">
+    <div class="card">
+    <div class="container">
+        <h4>Hello There: {{Names}}</h4>
+        <form action = {{url_for("result")}} method = "POST">
+        
+         <div>
+             <label for="icon_prefix2">Name_Full</label> 
+             <input id="icon_prefix2" type = "text" name = "Names" />
+        </div>
+         <p class="range-field" >Loan_amount<input name = "loan_amount" type="range" id="test5" min="0" max="5500" /></p>
+         <p class="range-field" >Funded_amount<input name = "funded_amount" type="range" id="test5" min="0" max="1000000" /></p>
+         <div></div>
+         <p>Loan Duration:  <input type = "text" name = "Duration" /></p>
+         <p>Interest Rate <input type = "text" name = "int" /></p>
+        
+         <p class="range-field" >Installment Amount<input name = "Installment" type="range" id="test5" min="0" max="1000" /></p>
+         <p>Employment Length <input type = "text" name = "emp" /></p>
+         <p>Home Ownership <input type = "text" name = "Home" /></p>
+         <p class="range-field" >Annual Income<input name = "Annual" type="range" id="test5" min="0" max="100000000" /></p>
+         <p>Verification Status <input type = "text" name = "verification" /></p>
+         <p>Loan Purpose <input type = "text" name = "purpose" /></p>
+          
+        <button class="btn" type="submit">Submit</button>
+
+        <br><br>
+
+      </form>
+      </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
