@@ -22,23 +22,24 @@ def student():
 
 @app.route('/result',methods = ['POST'])
 def result():
+   """Trains a machine learning model using cleaned dataset X,Y  and returns probability score. The function also gets data from
+   an online form and returns the specific probability score for that data."""
    X1 = pd.read_csv("X1.csv")
    Y1 = pd.read_csv("Y1.csv")
    
    X_train,X_test,Y_train,Y_test = train_test_split(X1,Y1,test_size = 0.2)
    sc = MinMaxScaler()
    clf1 = RandomForestClassifier(n_estimators = 100 ,verbose=1,random_state=324) 
-   clf = LogisticRegression(penalty='l1', C=0.01,verbose = 1)
-
    Model = Pipeline([('scaler', sc), ('clf1', clf1)])
    Model.fit(X_train, Y_train)
 
    def credit_score(row):
-    probability = Model.predict_proba(row)
-    df = pd.DataFrame(probability)
-    print(probability[:,0])
-    thresh = 10
-    return float(probability[:,0]*thresh)
+      """ Uses  the machine learning model and predicts a row of variables and converts them to the range [0,10]"""
+      probability = Model.predict_proba(row)
+      df = pd.DataFrame(probability)
+      print(probability[:,0])
+      thresh = 10
+      return probability[:,0]*thresh
 
    if request.method == "POST":
       
