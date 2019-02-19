@@ -69,5 +69,5 @@ def result():
   
       print(df.shape)
       print(score)
-   return render_template("result.html", score =score,result = result )
+   return render_template("result.html", score =score,result = result ,name = Name)
 
