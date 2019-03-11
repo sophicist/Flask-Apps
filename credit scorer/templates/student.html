@@ -1,61 +1,145 @@
-<html>
-   <body>
-   
-         <!DOCTYPE html>
-         <html lang="en">
-         <head>
-             <meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-             <title>Kenyan Data Online</title>
-             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-         </head>
-         
-         <body>
-             <nav>
-                 <div class="container">
-                     <div class="nav-wrapper">
-                         <a href="#" class="brand-logo">Credit Scorer</a>
-                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                             <li><a href="home.html">Home</a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </nav>
+<!DOCTYPE html>
+<html lang="en">
 
-   <div class="container">
-    <div class="card">
-    <div class="container">
-        <h4>Hello There: {{Names}}</h4>
-        <form action = {{url_for("result")}} method = "POST">
-        
-         <div>
-             <label for="icon_prefix2">Name_Full</label> 
-             <input id="icon_prefix2" type = "text" name = "Names" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenyan Data Online</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800,900" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-size: 16.7px;
+        }
+        body {
+            font-family: 'Poppins' sans-serif;
+            font-weight: 500;
+        }
+        h3 {
+            font-family: 'Poppins' sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #555;
+        }
+        nav {
+            background-color: black !important;
+        }
+        .nav-wrapper > a {
+            font-family: 'Poppins' sans-serif;
+            font-weight: 700;
+        }
+        .container-fluid {
+            padding: 2rem;
+        }
+        .feature-box {
+            background-color: #fff;
+            border-radius: 2px;
+            height: auto;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.09);
+        }
+
+        .loan-details > p.range-field {
+            margin: 2rem 0;
+        }
+        input[type=text] {
+            border: 1px solid #999 !important;
+            border-radius: 10px !important;
+            padding: 0 0 0 1rem !important;
+            opacity: .4;
+
+        }
+        input[type=range] {
+            border: 1px solid #999 !important;
+            opacity: .6;
+            border-radius: 2px !important;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="featurebox">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Credit Scorer</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('student')}}">Home</a></li>
+                </ul>
+            </div>
         </div>
-         <p class="range-field" >Loan_amount(desired Loan)<input name = "loan_amount" type="range" id="test5" min="0" max="5500" /></p>
-         <p class="range-field" >Funded_amount( amount You receive)<input name = "funded_amount" type="range" id="test5" min="0" max="1000000" /></p>
-         <div></div>
-         <p>Loan Duration: (in months) <input type = "text" name = "Duration" /></p>
-         <p>Interest Rate(btwn 1% - 20 %) <input type = "text" name = "int" /></p>
-        
-         <p class="range-field" >Installment Amount<input name = "Installment" type="range" id="test5" min="0" max="1000" /></p>
-         <p>Employment Length (in yrs) <input type = "text" name = "emp" /></p>
-         <p>Home Ownership ( Own, Rent,Mortgage)<input type = "text" name = "Home" /></p>
-         <p class="range-field" >Annual Income<input name = "Annual" type="range" id="test5" min="0" max="100000000" /></p>
-         <p>Verification Status( Verified,unverified) <input type = "text" name = "verification" /></p>
-         <p>Loan Purpose ( school fees, purchase...) <input type = "text" name = "purpose" /></p>
-          
-        <button class="btn" type="submit">Submit</button>
+    </nav>
 
-        <br><br>
+    <div class="container">
+        <div class="card feature-box">
+            <div class="container">
 
-      </form>
-      </div>
+                <form action="{{url_for('result')}}" method="POST">
+                    <br>
+                    <div class="container-fluid card feature-box personal">
+                        <h3>Personal Information</h3>
+
+                        <div>
+                            <label for="icon_prefix2">Name_Full</label>
+                            <input id="icon_prefix2" type="text" name="Names" />
+                        </div>
+                        <div>
+                            <label for="icon_prefix2">Age</label>
+                            <input id="icon_prefix2" type="text" name="age" />
+                        </div>
+                        <div>
+                            <label for="icon_prefix2">ID Number</label>
+                            <input id="icon_prefix2" type="text" name="id" />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container-fluid card feature-box loan-details">
+                        <h3>Loan Details</h3>
+
+                        <p class="range-field">Loan_amount(desired Loan)<input name="loan_amount" type="range" id="test5"
+                                min="0" max="5500" /></p>
+                        <p class="range-field">Funded_amount( amount You receive)<input name="funded_amount" type="range"
+                                id="test5" min="0" max="1000000" /></p>
+                        <div></div>
+                        <p>Loan Duration: (in months) <input type="text" name="Duration" /></p>
+                        <p>Interest Rate(btwn 1% - 20 %) <input type="text" name="int" /></p>
+
+                        <p class="range-field">Installment Amount<input name="Installment" type="range" id="test5" min="0"
+                                max="1000" /></p>
+                        <p>Employment Length (in yrs) <input type="text" name="emp" /></p>
+                        <p>Home Ownership ( Own, Rent,Mortgage)<input type="text" name="Home" /></p>
+                        <p class="range-field">Annual Income<input name="Annual" type="range" id="test5" min="0" max="100000000" /></p>
+                        <p>Verification Status( Verified,unverified) <input type="text" name="verification" /></p>
+                        <p>Loan Purpose ( school fees, purchase...) <input type="text" name="purpose" /></p>
+
+                    </div>
+                    <br>
+
+                    <div class="container-fluid card feature-box">
+                        <h3>Mpesa Details</h3>
+
+                        <p>Number of Transactions <input type="text" name="no" /></p>
+                        <p>Amount Sent <input type="text" name="sent" /></p>
+                        <p>Amount Received <input type="text" name="received" /></p>
+                        <p>No of Creditors <input type="text" name="creditors" /></p>
+                    </div>
+
+                    <button class="btn" type="submit">Submit</button>
+
+                    <br><br>
+
+                </form>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,81 @@
     <title>Credit Score</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800,900" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16.7px;
+        }
+
+        body {
+            font-family: 'Poppins'sans-serif;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-family: 'Poppins'sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #555;
+        }
+
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins'sans-serif;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: black !important;
+        }
+
+        .nav-wrapper>a {
+            font-family: 'Poppins'sans-serif;
+            font-weight: 700;
+        }
+
+        .container-fluid {
+            padding: 2rem;
+        }
+
+        .feature-box {
+            background-color: #fff;
+            border-radius: 2px;
+            height: auto;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.09);
+        }
+
+        .content-container {
+            background-color: rgba(58, 226, 184, 0.13);
+        }
+
+        .result-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .score {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 1rem;
+        }
+
+        .table {
+            padding: 0 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,63 +91,77 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Credit Scorer</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="{{url_for('student')}}">Home</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-<h1>Hello There : {{name}}</h1>
-    <div class="container">
-        <div class="card"> 
-            <div class="container">  
-                <div class="card-content">
-                    <h4>Your Credit Score is: </h4> 
-                    <i class="large material-icons">stars</i>
-                    <h4>{{score}}</h4> 
-                </div>
-            </div> 
-           
-            <div class="container">
-            <table class="striped">
-                <h4>Loan Score Card</h4>
-                <thead>
-                    <tr>
-                        <th>Range</th>
-                        <th>Suggested Loan</th>
-                        <th>Comments</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr>
-                        <td>8.1 - 10</td>
-                        <td>Maximum Loan</td>
-                        <td>This are the best loans that will perform wll</td>
-                    </tr>
-                    <tr>
-                        <td>6.1 - 8</td>
-                        <td>ksh 6,000 - ksh 10,000 </td>
-                        <td>Good loans that also perform well</td>
-                    </tr>
-                    <tr>
-                        <td>3.1 - 6</td>
-                        <td>ksh 3,000 - ksh 5,000 </td>
-                        <td>This are average loans that sometimes default but on average do well</td>
-                    </tr>
-                    <tr>
-                        <td>0 - 3</td>
-                        <td>No Loans </td>
-                        <td>This loans are highly likely to default</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container ">
+        <div class="card feature-box result-content">
+            <div class="container content-container">
+                <div class="card-content">
+                    <div class="container-fluid">
+                        <h4>Name : {{name}}</h4>
+                        <h6>Age : {{age}}</h6>
+                        <h6>ID : {{id}}</h6>
+                    </div>
+                    <br>
+
+                    <div class="container-fluid">
+                        <h5>Your Credit Score is: </h5>
+                        <div class="score">
+                            <i class="large material-icons">stars</i>
+                            <h4 class="align left">{{score}}</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container card feature-box table">
+                <table class="striped">
+                    <h4>Loan Score Card</h4>
+                    <thead>
+                        <tr>
+                            <th>Range</th>
+                            <th>Suggested Loan</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>8.1 - 10</td>
+                            <td>Maximum Loan</td>
+                            <td>This are the best loans that will perform wll</td>
+                        </tr>
+                        <tr>
+                            <td>6.1 - 8</td>
+                            <td>ksh 6,000 - ksh 10,000 </td>
+                            <td>Good loans that also perform well</td>
+                        </tr>
+                        <tr>
+                            <td>3.1 - 6</td>
+                            <td>ksh 3,000 - ksh 5,000 </td>
+                            <td>This are average loans that sometimes default but on average do well</td>
+                        </tr>
+                        <tr>
+                            <td>0 - 3</td>
+                            <td>No Loans </td>
+                            <td>This loans are highly likely to default</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     </div>
-</div>
-</div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-</body>  
+</body>
+
 </html>
