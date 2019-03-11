@@ -10,7 +10,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
-#import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 print(os.listdir())
@@ -120,6 +119,7 @@ def result():
    #score = credit_score(df)[0]
       score = credit_score(df)
       scores = scored(2,int(sent),int(received),int(creditors),score)
+
 
       print(df.shape)
       print(score)
